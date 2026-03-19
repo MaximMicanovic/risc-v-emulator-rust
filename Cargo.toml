@@ -1,0 +1,18 @@
+[package]
+name = "risc-v-emulator-rust"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "risc_v_emulator_rust"
+path = "src/lib.rs"
+
+[[bin]]
+name = "risc-v-emulator-rust"
+path = "src/main.rs"
+
+[features]
+display = ["dep:sdl2"]
+
+[dependencies]
+sdl2 = { version = "0.37", optional = true }
