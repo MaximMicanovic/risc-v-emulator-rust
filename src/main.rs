@@ -19,8 +19,9 @@
 //     }
 // }
 
+use risc_v_emulator_rust::bus;
 use risc_v_emulator_rust::emulator::Emulator;
-use risc_v_emulator_rust::instructions;
+use risc_v_emulator_rust::mmu;
 use std::fs::File;
 use std::io::Read;
 

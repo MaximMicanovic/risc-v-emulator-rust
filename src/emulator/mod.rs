@@ -1,19 +1,20 @@
-use crate::cpu::CpuData;
-use crate::memory::{init_ram, RAM_SIZE};
+use crate::cpu::Cpu;
+use crate::bus::Bus;
 
 pub struct Emulator {
-    pub cpu: CpuData,
-    pub mem: Vec<u8>,
+    pub cpu: Cpu,
+    pub bus: Bus,
 }
 
 impl Emulator {
     pub fn new() -> Self {
-        let mut cpu = CpuData::new();
-        // STACKPOINTER INIT
-        cpu.gpr[2] = RAM_SIZE as u64;
+        let mut cpu = Cpu::new();
+        let mut bus = Bus::new();
+        // Stackpointer init
+
         Emulator {
             cpu,
-            mem: init_ram(),
+            bus,
         }
     }
 }
